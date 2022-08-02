@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/pb-bennett/mission-control-front/issues"
   },
-  "homepage": "https://github.com/pb-bennett/mission-control-front#readme"
+  "homepage": "https://github.com/pb-bennett/mission-control-front#readme",
+  "dependencies": {
+    "leaflet": "^1.8.0",
+    "lodash-es": "^4.17.21"
+  }
 }
