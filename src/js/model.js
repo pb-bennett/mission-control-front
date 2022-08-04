@@ -7,7 +7,7 @@ import { AJAX } from './helpers.js';
 
 export const loadMissions = async function (id = '') {
   try {
-    const data = await AJAX(`http://192.168.1.48:3000/api/v1/missions/${id}`);
+    const data = await AJAX(`http://84.234.239.112:3000/api/v1/missions/${id}`);
     const missions = data.data.missions;
     if (Array.isArray(missions)) return missions;
     return [missions];
