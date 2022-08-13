@@ -3,8 +3,6 @@ import missionInfoView from './views/missionInfoView.js';
 
 import { loadMissions } from './model.js';
 
-mapView.createMap();
-
 const closeMissionInfoHandler = function () {
   missionInfoView.clearMissionInfo();
   mapView.clearRoutes();
@@ -28,6 +26,7 @@ const missions = async function (id = '') {
   // }, 5000);
 };
 
+mapView.createMap();
 missions();
 
 // '62e3ab2a64078ea1095782e4'
