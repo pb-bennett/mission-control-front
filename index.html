@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -19,6 +20,86 @@
   </head>
   <body>
     <div id="map"></div>
+    <div id="burger-button" class="icon-button">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div id="side-menu-max">
+      <div id="side-menu-title-container">
+        <div class="icon-button"><i class="fa-solid fa-angle-right"></i></div>
+        <div class="side-menu-item-title">
+          <div id="side-menu-title">Mission Control</div>
+        </div>
+        <div class="icon-button">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </div>
+      </div>
+      <div class="side-menu-item-container">
+        <div class="side-menu-item-title"><div>Paul</div></div>
+        <div class="icon-button">
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+      <div class="side-menu-item-container">
+        <div class="side-menu-item-title"><div>Available Missions</div></div>
+        <div class="icon-button">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+      </div>
+      <div class="side-menu-item-container">
+        <div class="side-menu-item-title"><div>Current Mission</div></div>
+        <div class="icon-button">
+          <i class="fa-solid fa-thumbtack"></i>
+        </div>
+      </div>
+      <div class="side-menu-item-container">
+        <div class="side-menu-item-title"><div>Create New Mission</div></div>
+        <div class="icon-button">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+      </div>
+      <div class="side-menu-item-container">
+        <div class="side-menu-item-title"><div>Settings</div></div>
+        <div class="icon-button">
+          <i class="fa-solid fa-gear"></i>
+        </div>
+      </div>
+    </div>
+
+    <div id="side-menu-min">
+      <!-- <div id="side-menu-title-container"> -->
+
+      <div class="icon-button">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </div>
+      <div class="icon-button"><i class="fa-solid fa-angle-left"></i></div>
+      <!-- </div> -->
+      <div class="side-menu-item-container">
+        <div class="icon-button">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+      </div>
+      <div class="side-menu-item-container">
+        <div class="icon-button">
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+      <div class="side-menu-item-container">
+        <div class="icon-button">
+          <i class="fa-solid fa-thumbtack"></i>
+        </div>
+      </div>
+      <div class="side-menu-item-container">
+        <div class="icon-button">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+      </div>
+      <div class="side-menu-item-container">
+        <div class="icon-button">
+          <i class="fa-solid fa-gear"></i>
+        </div>
+      </div>
+    </div>
+
     <div id="pathfinder-ui"></div>
     <div id="mission-info-view-container"></div>
   </body>

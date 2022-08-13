@@ -7,6 +7,7 @@ mapView.createMap();
 
 const closeMissionInfoHandler = function () {
   missionInfoView.clearMissionInfo();
+  mapView.clearRoutes();
 };
 
 const openMissionInfoHandler = async function (input) {
