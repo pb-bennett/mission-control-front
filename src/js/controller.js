@@ -2,6 +2,7 @@ import mapView from './views/mapView.js';
 import missionInfoView from './views/missionInfoView.js';
 
 import { loadMissions } from './model.js';
+import { state } from './model.js';
 
 const closeMissionInfoHandler = function () {
   missionInfoView.clearMissionInfo();
@@ -28,5 +29,7 @@ const missions = async function (id = '') {
 
 mapView.createMap();
 missions();
+console.log(state);
+// console.log(Date.parse('05 Aug 2022 10:23:53 GMT'));
 
 // '62e3ab2a64078ea1095782e4'
