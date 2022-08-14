@@ -26,12 +26,10 @@ class MissionInfoView {
     </div>
     </div>
     `;
-    console.log(html);
 
     return html;
   }
   showMissionInfo(mission, handler) {
-    // console.log(mission);
     const html = this._makeHTML(mission);
     this._parentElement.innerHTML = '';
 

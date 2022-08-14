@@ -6,6 +6,7 @@ import loginView from './views/loginView.js';
 import { loadMissions } from './model.js';
 import { state } from './model.js';
 import { loadState } from './model.js';
+import { returnBounds } from './model.js';
 
 import users from './dev/users.js';
 
@@ -15,19 +16,25 @@ const closeMissionInfoHandler = function () {
 };
 
 const openMissionInfoHandler = async function (input) {
-  // console.log(input.target.id);
   const missions = await loadMissions(input.target.id);
   mapView.plotRoutes(missions);
   missionInfoView.showMissionInfo(...missions, closeMissionInfoHandler);
 };
 
-const loginBtnHandler = function (input) {
+const loginBtnHandler = async function (input, id = '') {
   if (!input.target.className.includes('login-btn')) return;
-  console.log(input, input.target.dataset.id);
   const state = loadState(input.target.dataset.id);
-  console.log(state);
+  const missions = await loadMissions(id);
   loginView.closeLogin();
+  // mapView.plotEndPoints(missions, openMissionInfoHandler, state);
+  const bounds = returnBounds(missions);
   sideBarRightView.renderSideBar(state, sideBarRightHandler);
+  mapView.plotHomePoint(state);
+  // missionsGo();
+  // await missionsGo(); [59.14567006861154, 10.211586849669924]
+  // mapView.flyToBounds(bounds);
+  console.log(state);
+  mapView.flyToPoint(state.user[0].homeBase.coordinates, 18);
 };
 
 const sideBarRightHandler = function (input) {
@@ -54,14 +61,13 @@ const sideBarRightHandlerBurger = function (btn) {
   sideBarRightView.renderSideBar(state, sideBarRightHandler);
 };
 
-const missions = async function (id = '') {
+const missionsGo = async function (id = '') {
   const missions = await loadMissions(id);
-  mapView.plotEndPoints(missions, openMissionInfoHandler);
+  mapView.plotEndPoints(missions, openMissionInfoHandler, state);
 };
 
 //
-
+// missionsGo();
 loginView.showLogin(users, loginBtnHandler);
-loadState('ec9c7480a4af7831a4ef2baed044433a');
+
 mapView.createMap();
-missions();

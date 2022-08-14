@@ -1,5 +1,6 @@
 class LoginView {
   _parentElement = document.getElementById('login-container');
+  _overlay = document.querySelector('.overlay');
   _makeHTML(users) {
     const html = users.map(
       user => `       
@@ -20,6 +21,7 @@ class LoginView {
   }
   closeLogin() {
     this._parentElement.innerHTML = '';
+    this._overlay.classList.add('hidden');
   }
 }
 
