@@ -1,9 +1,10 @@
 class SideBarRightView {
   _parentElement = document.getElementById('side-menu-right');
   _makeTopHTML(state) {
+    console.log(state);
     if (state.sideBarRightState === 'burger')
       return `
-      <div class="icon-button" data-btn="burger-burger">
+      <div class="icon-button side-menu-btn" data-btn="burger-burger">
       <i class="fa-solid fa-bars"></i>
       </div>
     `;
@@ -45,7 +46,7 @@ class SideBarRightView {
       </div>
     </div>
     <div class="side-menu-item-container side-menu-btn" data-btn="user">
-      <div class="side-menu-item-title"><div>${state.user.userName}</div></div>
+      <div class="side-menu-item-title"><div>${state.user[0].userName}</div></div>
       <div class="icon-button">
         <i class="fa-solid fa-user"></i>
       </div>
@@ -121,7 +122,13 @@ class SideBarRightView {
       this._makeMiddleHTML(state),
       this._makeBottomHTML(state),
     ].join(' ');
-    console.log(html);
+    return html;
+  }
+  renderSideBar(state, handler) {
+    const html = this._makeHTML(state);
+    this._parentElement.innerHTML = '';
+    this._parentElement.insertAdjacentHTML('afterbegin', html);
+    this._parentElement.addEventListener('click', handler);
   }
 }
 

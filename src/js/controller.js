@@ -27,6 +27,31 @@ const loginBtnHandler = function (input) {
   const state = loadState(input.target.dataset.id);
   console.log(state);
   loginView.closeLogin();
+  sideBarRightView.renderSideBar(state, sideBarRightHandler);
+};
+
+const sideBarRightHandler = function (input) {
+  const target = input.target.closest('.side-menu-btn');
+  if (target && target.dataset.btn.includes('burger'))
+    sideBarRightHandlerBurger(target.dataset.btn);
+  if (target && target.dataset.btn.includes('arrow'))
+    sideBarRightHandlerArrow(target.dataset.btn);
+};
+
+const sideBarRightHandlerArrow = function (btn) {
+  if (btn === 'min-arrow') state.sideBarRightState = 'max';
+  if (btn === 'max-arrow') state.sideBarRightState = 'min';
+  sideBarRightView.renderSideBar(state, sideBarRightHandler);
+};
+
+const sideBarRightHandlerBurger = function (btn) {
+  if (btn === 'max-burger' || btn === 'min-burger') {
+    state.sideBarRightState = 'burger';
+  }
+  if (btn === 'burger-burger') {
+    state.sideBarRightState = 'min';
+  }
+  sideBarRightView.renderSideBar(state, sideBarRightHandler);
 };
 
 const missions = async function (id = '') {
@@ -40,4 +65,3 @@ loginView.showLogin(users, loginBtnHandler);
 loadState('ec9c7480a4af7831a4ef2baed044433a');
 mapView.createMap();
 missions();
-sideBarRightView._makeHTML(state);
