@@ -31,13 +31,7 @@ const loginBtnHandler = function (input) {
 
 const missions = async function (id = '') {
   const missions = await loadMissions(id);
-  // console.log(missions);
-  // mapView.plotRoutes(missions);
   mapView.plotEndPoints(missions, openMissionInfoHandler);
-  // setTimeout(() => {
-  //   console.log('clear');
-  //   mapView.clearRoutes();
-  // }, 5000);
 };
 
 //
@@ -46,8 +40,3 @@ loginView.showLogin(users, loginBtnHandler);
 loadState('ec9c7480a4af7831a4ef2baed044433a');
 mapView.createMap();
 missions();
-console.log(state);
-console.log(sideBarRightView._parentElement);
-// console.log(Date.parse('05 Aug 2022 10:23:53 GMT'));
-
-// '62e3ab2a64078ea1095782e4'
