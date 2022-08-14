@@ -5,18 +5,6 @@ import users from './dev/users.js';
 console.log(users);
 
 export const state = {
-  // user: {
-  //   userName: 'Paul',
-  //   id: 'ec9c7480a4af7831a4ef2baed044433a',
-  //   homeBase: {
-  //     address: { road: 'Plutos vei 23', town: 'Sandefjord', postCode: '3226' },
-  //   },
-  //   currentMission: {
-  //     currentMissionId: '62eb99097bed694df0712dbf',
-  //     dateStarted:
-  //       'Sat Aug 13 2022 17:13:46 GMT+0200 (Central European Summer Time)',
-  //   },
-  // },
   sideBarRightState: 'burger',
 };
 

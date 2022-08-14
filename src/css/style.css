@@ -134,11 +134,11 @@ body {
   align-items: flex-end;
   gap: 5px;
 }
-#side-menu-title {
+.side-menu-title {
   font-weight: bolder;
   font-size: 20px;
 }
-#side-menu-title-container {
+.side-menu-title-container {
   font-size: 30px;
   display: flex;
   flex-direction: row;

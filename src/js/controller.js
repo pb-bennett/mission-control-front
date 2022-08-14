@@ -40,3 +40,4 @@ loginView.showLogin(users, loginBtnHandler);
 loadState('ec9c7480a4af7831a4ef2baed044433a');
 mapView.createMap();
 missions();
+sideBarRightView._makeHTML(state);
