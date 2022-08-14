@@ -28,26 +28,45 @@ body {
   opacity: 90%;
 }
 #login-container {
-  display: flex;
-  /* visibility: hidden; */
-  flex-direction: column;
-  /* height: 95vh; */
-  border: 2px orangered solid;
-  /* width: 40vw; */
-  max-width: 350px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 8;
+  /* border: 2px orangered solid; */
+}
+.login-title-1 {
+  font-size: 22px;
+  font-weight: bolder;
+}
+.login-title-2 {
+  font-size: 26px;
+  font-weight: bolder;
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
   background-color: white;
   border: 2px rgb(130, 130, 130) solid;
   opacity: 80%;
   border-radius: 6px;
-  z-index: 8;
   padding: 5px;
-  align-items: flex-end;
+  align-items: center;
   gap: 5px;
+  user-select: none;
 }
+.login-btn {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bolder;
+  border: 2px rgb(130, 130, 130) solid;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 #burger-button {
   /* visibility: hidden; */
   z-index: 8;

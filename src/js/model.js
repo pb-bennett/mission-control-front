@@ -21,9 +21,10 @@ export const state = {
 };
 
 console.log(state);
-export const loadState = function (user) {
+export const loadState = function (userID) {
   state.user = null;
-  state.user = users.filter(el => el.userName === user);
+  state.user = users.filter(user => user.id === userID);
+  return state;
 };
 
 export const loadMissions = async function (id = '') {
