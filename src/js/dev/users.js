@@ -11,7 +11,7 @@ export default [
         town: 'Sandefjord',
         postCode: '3226',
       },
-      coordinates: [10.21160075794156, 59.145802000138865],
+      coordinates: [59.145802000138865, 10.21160075794156],
     },
     currentMission: {
       currentMissionId: '62eb99097bed694df0712dbf',
@@ -32,7 +32,7 @@ export default [
         town: 'Sandefjord',
         postCode: '3226',
       },
-      coordinates: [10.21160075794156, 59.145802000138865],
+      coordinates: [59.145802000138865, 10.21160075794156],
     },
     currentMission: {
       currentMissionId: '62eb99097bed694df0712dc0',
@@ -52,7 +52,7 @@ export default [
         town: 'Sandefjord',
         postCode: '3226',
       },
-      coordinates: [10.21160075794156, 59.145802000138865],
+      coordinates: [59.145802000138865, 10.21160075794156],
     },
     currentMission: {
       currentMissionId: '62eb99097bed694df0712dc1',
@@ -72,7 +72,7 @@ export default [
         town: 'Sandefjord',
         postCode: '3226',
       },
-      coordinates: [10.21160075794156, 59.145802000138865],
+      coordinates: [59.145802000138865, 10.21160075794156],
     },
     currentMission: {
       currentMissionId: '62eb99097bed694df0712dc2',

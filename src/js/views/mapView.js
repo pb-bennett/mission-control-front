@@ -11,11 +11,8 @@ class Map {
     className: 'myDivIcon',
   });
 
-  createMap() {
-    this._map = L.map('map', { zoomDelta: 0.1, zoomSnap: 0.1 }).setView(
-      [60.17580089165257, 7.572296643958876],
-      7
-    );
+  createMap(initCoords = [60.17580089165257, 7.572296643958876]) {
+    this._map = L.map('map').setView(initCoords, 7);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 21,
       minZoom: 7,
@@ -43,9 +40,6 @@ class Map {
     missions.forEach(mission => newLayers.push(...this._createLines(mission)));
     this._routesLayer = L.layerGroup([...newLayers]).addTo(this._map);
   }
-  clearRoutes() {
-    this.map.removeLayer(this.routesLayer);
-  }
   _createEndpoints(mission, handler) {
     const point = L.geoJSON(mission.endLocation).on('click', handler);
     point.id = mission._id;
@@ -54,7 +48,8 @@ class Map {
   }
   plotEndPoints(missions, handler, state) {
     // console.log(missions);
-    this._endPointsLayer = null;
+    if (this._endPointsLayer) this._endPointsLayer.remove(this._map);
+    this._endPointsLayer = '';
     const newEndpoints = [];
     const handlerFunction = handler;
 
@@ -70,8 +65,14 @@ class Map {
       icon: this._returnMarkerIcon('red'),
     }).addTo(this._map);
   }
+  clearRoutes() {
+    if (this._routesLayer) this._map.removeLayer(this._routesLayer);
+  }
   clearEndPoints() {
-    this._map.removeLayer(this._endPointsLayer);
+    if (this._endPointsLayer) this._map.removeLayer(this._endPointsLayer);
+  }
+  clearHomePoints() {
+    if (this._homePoint) this._map.removeLayer(this._homePoint);
   }
   flyToPoint(point, zoom) {
     this._map.flyTo(point, zoom);

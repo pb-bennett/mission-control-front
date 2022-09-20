@@ -9,8 +9,10 @@ class SideBarRightView {
     `;
     if (state.sideBarRightState === 'min')
       return `
+    <div class="side-menu-title-container">
     <div class="icon-button side-menu-btn" data-btn="min-burger">
       <i class="fa-solid fa-bars-staggered"></i>
+    </div>
     </div>
     <div class="icon-button side-menu-btn" data-btn="min-arrow">
       <i class="fa-solid fa-angle-left"></i>
@@ -34,7 +36,6 @@ class SideBarRightView {
     if (state.sideBarRightState === 'max')
       return `
     <div class="side-menu-title-container">
-
       <div class="side-menu-item-title">
         <div class="side-menu-title">Mission Control</div>
       </div>
@@ -131,6 +132,9 @@ class SideBarRightView {
     this._parentElement.innerHTML = '';
     this._parentElement.insertAdjacentHTML('afterbegin', html);
     this._parentElement.addEventListener('click', handler);
+  }
+  hideSideBar() {
+    this._parentElement.innerHTML = '';
   }
 }
 

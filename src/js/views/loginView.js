@@ -21,8 +21,19 @@ class LoginView {
   }
   closeLogin() {
     this._parentElement.innerHTML = '';
+    this.hideOverlay();
+  }
+  hideOverlay() {
     this._overlay.classList.add('hidden');
   }
+  showOverlay() {
+    this._overlay.classList.remove('hidden');
+  }
+  // toggleOverlay() {
+  //   this._overlay.classList.contains('hidden')
+  //     ? this._overlay.classList.remove('hidden')
+  //     : this._overlay.classList.add('hidden');
+  // }
 }
 
 export default new LoginView();
